@@ -1,12 +1,27 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import HeaderBar from '../components/headerBar';
 
-const DashBoardScreen = () => {
+const DashboardScreen = () => {
     return (
-        <View>
-            <Text>Check Balance Screen</Text>
+        <View style={styles.container}>
+            <HeaderBar title="Dashboard" />
+            <View style={styles.content}>
+                <Text>Check Balance Screen</Text>
+            </View>
         </View>
     );
 };
 
-export default DashBoardScreen;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    content: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+});
+
+export default DashboardScreen;
