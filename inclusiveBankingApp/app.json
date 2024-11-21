@@ -34,6 +34,10 @@
         }
       ]
     ],
+    "assets": [
+      "./assets/fonts/", 
+      "./assets/images/"     
+    ],
     "experiments": {
       "typedRoutes": true
     }

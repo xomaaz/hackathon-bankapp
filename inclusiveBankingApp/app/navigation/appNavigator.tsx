@@ -1,0 +1,46 @@
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+
+// Import all screens from the screens directory
+import WelcomeScreen from '../screens/welcome';
+// import LoginScreen from '../screens/login';
+// import DashboardScreen from '../screens/dashboard';
+// import CheckBalanceScreen from '../screens/checkBalance';
+// import TransferMoneyScreen from '../screens/transferMoney';
+// import TransactionHistoryScreen from '../screens/transactionHistory';
+// import PayBillsScreen from '../screens/payBills';
+// import RegisterScreen from '../screens/register';
+// import SettingsScreen from '../screens/settings';
+// import HelpScreen from '../screens/help';
+
+const Stack = createNativeStackNavigator();
+
+const AppNavigator = () => {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="Welcome"
+                screenOptions={{
+                    headerStyle: { backgroundColor: '#0055FF' }, // Example primary color
+                    headerTintColor: '#FFF',
+                    headerTitleStyle: { fontWeight: 'bold' },
+                    animation: 'slide_from_right', // Smooth animations for transitions
+                }}
+            >
+                <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Welcome' }} />
+                {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+                <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
+                <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
+                <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} options={{ title: 'Transfer Money' }} />
+                <Stack.Screen name="TransactionHistory" component={TransactionHistoryScreen} options={{ title: 'Transaction History' }} />
+                <Stack.Screen name="PayBills" component={PayBillsScreen} options={{ title: 'Pay Bills' }} />
+                <Stack.Screen name="Register" component={RegisterScreen} options={{ title: 'Register' }} />
+                <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+                <Stack.Screen name="Help" component={HelpScreen} options={{ title: 'Help & Support' }} /> */}
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+export default AppNavigator;
