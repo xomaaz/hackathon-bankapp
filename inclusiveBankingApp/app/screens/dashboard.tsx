@@ -12,7 +12,7 @@ const DashboardScreen = () => {
     return (
         <View style={styles.container}>
             {/* Header with Image */}
-            <HeaderBarImage imageSource={require('../../assets/images/headerBarLogo.png')} personName={personName} />
+            <HeaderBarImage imageSource={require('../../assets/images/headerBarLogo.png')} />
 
             {/* New Container Below Header */}
             <View style={styles.welcomeContainer}>
