@@ -46,7 +46,6 @@ export default function App() {
         <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
             <PaperProvider theme={theme}>
                     <AppNavigator />
-
             </PaperProvider>
         </GestureHandlerRootView>
     );

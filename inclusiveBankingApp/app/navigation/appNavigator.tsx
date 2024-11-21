@@ -22,7 +22,7 @@ const AppNavigator = () => {
             <Stack.Navigator
                 initialRouteName="Welcome"
                 screenOptions={{
-                    headerStyle: { backgroundColor: '#0055FF' }, // Example primary color
+                    headerStyle: { backgroundColor: '#000000' }, // Example primary color
                     headerTintColor: '#FFF',
                     headerTitleStyle: { fontWeight: 'bold' },
                     animation: 'slide_from_right', // Smooth animations for transitions
