@@ -22,13 +22,14 @@ const AppNavigator = () => {
             <Stack.Navigator
                 initialRouteName="Welcome"
                 screenOptions={{
-                    headerStyle: { backgroundColor: '#000000' }, // Example primary color
-                    headerTintColor: '#FFF',
-                    headerTitleStyle: { fontWeight: 'bold' },
                     animation: 'slide_from_right', // Smooth animations for transitions
                 }}
             >
-                <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Welcome' }} />
+                <Stack.Screen 
+                    name="Welcome" 
+                    component={WelcomeScreen} 
+                    options={{ headerShown: false }} // Completely remove the header
+                />
                 {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
                 <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
