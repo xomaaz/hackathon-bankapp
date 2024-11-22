@@ -25,6 +25,7 @@ const DashboardScreen = () => {
                 <Button
                     mode="contained" 
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => console.log('Transactions')}>
                     Transactions
@@ -32,6 +33,7 @@ const DashboardScreen = () => {
                 <Button 
                     mode="contained" 
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => console.log('Bill Payment')}>
                     Bill Payment
@@ -39,6 +41,7 @@ const DashboardScreen = () => {
                 <Button 
                     mode="contained" 
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => console.log('History')}>
                     History
@@ -46,6 +49,7 @@ const DashboardScreen = () => {
                 <Button                     
                     mode="contained" 
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => console.log('Help and Preferences')}>
                     Help & Settings Preferences
@@ -89,13 +93,15 @@ const styles = StyleSheet.create({
         width: '100%', // make the button span the full width
         height: 60, // the button height
         marginVertical: 10, // maintain constant spacing between buttons
-        justifyContent: 'center', // center the text vertically,
-        fontSize: 20,
+        justifyContent: 'center', // center the text vertically
+    },
+    buttonContent: {
+        padding: 0, // Remove any internal padding to ensure full coverage
+        height: '100%', // Ensure the content spans the entire button height
     },
     buttonLabel: {
         fontSize: 20,
     },
 });
-
 
 export default DashboardScreen;
