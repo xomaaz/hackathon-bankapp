@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "expo-camera": "^16.0.6",
+    "react-native-safe-area-context": "^4.14.0"
+  }
+}

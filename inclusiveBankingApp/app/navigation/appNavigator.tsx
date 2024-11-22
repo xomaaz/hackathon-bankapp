@@ -13,6 +13,7 @@ import TransferMoneyScreen1 from '../screens/transferMoney1';
 // import RegisterScreen from '../screens/register';
 // import SettingsScreen from '../screens/settings';
 // import HelpScreen from '../screens/help';
+import TransferMoneyScreen2 from "../screens/transferMoney2"
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +21,7 @@ const AppNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="TransferMoney1"
+                initialRouteName="TransferMoney2"
                 screenOptions={{
                     animation: 'slide_from_right', // Smooth animations for transitions
                 }}
@@ -35,6 +36,12 @@ const AppNavigator = () => {
                     name="TransferMoney1"
                     component={TransferMoneyScreen1}
                     options={{ title: 'Transfer Money', headerShown: false }}
+                />
+
+                <Stack.Screen
+                    name="TransferMoney2"
+                    component={TransferMoneyScreen2}
+                    options={{ title: 'Transfer Money 2', headerShown: false }}
                 />
 
                 {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
