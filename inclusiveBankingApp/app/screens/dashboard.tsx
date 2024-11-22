@@ -33,21 +33,21 @@ const DashboardScreen = () => {
                     mode="contained" 
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Transactions')}>
+                    onPress={() => console.log('Bill Payment')}>
                     Bill Payment
                 </Button>
                 <Button 
                     mode="contained" 
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Transactions')}>
+                    onPress={() => console.log('History')}>
                     History
                 </Button>
                 <Button                     
                     mode="contained" 
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Transactions')}>
+                    onPress={() => console.log('Help and Preferences')}>
                     Help & Settings Preferences
                 </Button>
             </View>
