@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import HeaderBarImage from '../components/headerBarImage';
+import HeaderBar from '../components/headerBar';
 import theme from '../constants/theme';
 import { Button } from 'react-native-paper'; 
 
 const { height: screenHeight } = Dimensions.get('window');
 
-const transfer = () => {
+const Transfer = () => {
     const personName = "John Doe"; // Replace with dynamic name if needed
 
     return (
         <View style={styles.container}>
             {/* Header with Image */}
-            <HeaderBarImage imageSource={require('../../assets/images/headerBarLogo.png')} />
+            <HeaderBar title="Transfer Money" />
 
             {/* New Container Below Header */}
             <View style={styles.welcomeContainer}>
@@ -105,4 +105,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default transfer;
+export default Transfer;

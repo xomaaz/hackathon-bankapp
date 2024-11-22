@@ -34,7 +34,7 @@ const AppNavigator = () => {
                 <Stack.Screen
                     name="TransferMoney1"
                     component={TransferMoneyScreen1}
-                    options={{ title: 'Transfer Money' }}
+                    options={{ title: 'Transfer Money', headerShown: false }}
                 />
 
                 {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />

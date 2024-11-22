@@ -17,14 +17,17 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
 const styles = StyleSheet.create({
     headerContainer: {
         width: '100%',
-        padding: 45,
-        backgroundColor: theme.colors.primary,
-        alignItems: 'center',
+        height: 100,
+        backgroundColor: theme.colors.primary + 'CC',
+        justifyContent: 'center', // center content vertically
+        alignItems: 'center', // center content horizontally
+        paddingTop: 30, // move the text slightly down
     },
     headerText: {
-        color: '#FFF', // White text color
-        fontSize: 18,
+        color: '#FFF',
+        fontSize: 30,
         fontWeight: 'bold',
+        textAlign: 'center',
     },
 });
 
