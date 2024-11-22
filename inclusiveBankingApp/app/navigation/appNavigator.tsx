@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 // Import all screens from the screens directory
 import WelcomeScreen from '../screens/welcome';
 // import LoginScreen from '../screens/login';
+import DashboardScreen from '../screens/dashboard';
 // import DashboardScreen from '../screens/dashboard';
 // import CheckBalanceScreen from '../screens/checkBalance';
 // import TransferMoneyScreen from '../screens/transferMoney';
@@ -25,13 +26,14 @@ const AppNavigator = () => {
                     animation: 'slide_from_right', // Smooth animations for transitions
                 }}
             >
-                <Stack.Screen 
-                    name="Welcome" 
-                    component={WelcomeScreen} 
+                <Stack.Screen
+                    name="Welcome"
+                    component={WelcomeScreen}
                     options={{ headerShown: false }} // Completely remove the header
                 />
-                {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
                 <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
+                {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+                
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
                 <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} options={{ title: 'Transfer Money' }} />
                 <Stack.Screen name="TransactionHistory" component={TransactionHistoryScreen} options={{ title: 'Transaction History' }} />

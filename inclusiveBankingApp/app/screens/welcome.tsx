@@ -11,7 +11,7 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
 
   const handlePressLogin = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); // Provides haptic feedback
-    navigation.navigate('Login')
+    navigation.navigate('Dashboard')
 
   };
 
@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#008080',
     borderRadius: 12, // Slightly more rounded corners
+    // bottom: 20, // Increased margin for better spacing
   },
   buttonLabel: {
     fontSize: 20, // Larger font for better readability
@@ -140,9 +141,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   outlineButton: {
-    // marginVertical: 15,
-    // paddingVertical: 15,
-    borderWidth: 3, // Slightly thicker border for visibility
+    marginVertical: 15,
+    paddingVertical: 15,
+    // borderWidth: 3, // Slightly thicker border for visibility
     borderColor: '#008080',
     borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 1.0)',
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
     color: '#008080',
   },
   buttoncontext: {
-    height: 60, // Increased height for larger buttons
+    height: 80, // Increased height for larger buttons
     padding: 0,
   }
 });

@@ -1,58 +1,87 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import HeaderBarImage from '../components/headerBarImage';
-import theme from '../constants/theme';
-import { Button } from 'react-native-paper'; 
+import { Button, useTheme } from 'react-native-paper';
+import * as Haptics from 'expo-haptics';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const { height: screenHeight } = Dimensions.get('window');
 
 const DashboardScreen = () => {
     const personName = "John Doe"; // Replace with dynamic name if needed
+    const theme = useTheme();
 
     return (
         <View style={styles.container}>
-            {/* Header with Image */}
-            <HeaderBarImage imageSource={require('../../assets/images/headerBarLogo.png')} />
 
-            {/* New Container Below Header */}
+
+            {/* Welcome Section */}
             <View style={styles.welcomeContainer}>
-                <Text style={styles.welcomeText}>Welcome</Text>
+                <Text style={styles.welcomeText}>Welcome,</Text>
                 <Text style={styles.nameText}>{personName}</Text>
             </View>
 
             {/* Main Content */}
             <View style={styles.content}>
                 <Button
-                    mode="contained" 
+                    mode="contained"
+                    icon={() => <MaterialCommunityIcons name="account" size={32} color="#FFF" />}
                     style={styles.button}
-                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Transactions')}>
+                    onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        console.log('Account');
+                    }}
+                >
+                    Account
+                </Button>
+                <Button
+                    mode="contained"
+                    icon={() => <MaterialCommunityIcons name="swap-horizontal" size={32} color="#FFF" />}
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        console.log('Transactions');
+                    }}
+                >
                     Transactions
                 </Button>
-                <Button 
-                    mode="contained" 
+                <Button
+                    mode="contained"
+                    icon={() => <MaterialCommunityIcons name="file-document" size={32} color="#FFF" />}
                     style={styles.button}
-                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Bill Payment')}>
+                    onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        console.log('Bill Payment');
+                    }}
+                >
                     Bill Payment
                 </Button>
-                <Button 
-                    mode="contained" 
+                <Button
+                    mode="contained"
+                    icon={() => <MaterialCommunityIcons name="cog" size={32} color="#FFF" />}
                     style={styles.button}
-                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('History')}>
-                    History
+                    onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        console.log('Settings');
+                    }}
+                >
+                    Settings
                 </Button>
-                <Button                     
-                    mode="contained" 
-                    style={styles.button}
-                    contentStyle={styles.buttonContent}
+                <Button
+                    mode="contained"
+                    icon={() => <MaterialCommunityIcons name="logout" size={32} color="#FFF" />}
+                    style={[styles.button, styles.logoutButton]}
                     labelStyle={styles.buttonLabel}
-                    onPress={() => console.log('Help and Preferences')}>
-                    Help & Settings Preferences
+                    onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+                        console.log('Logout');
+                    }}
+                >
+                    Logout
                 </Button>
             </View>
         </View>
@@ -62,45 +91,51 @@ const DashboardScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#F7F9FC',
     },
     welcomeContainer: {
-        width: '100%',
-        height: screenHeight * 0.2, // 20% of screen height
-        backgroundColor: theme.colors.primary,
+        width: '95%', // Reduce the width to leave space on sides
+        height: screenHeight * 0.2,
+        backgroundColor: '#004d99',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10, // Symmetrical padding
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        elevation: 5,
+        marginHorizontal: '2%', // Equal space from both sides
     },
     welcomeText: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#FFF',
+        fontFamily: 'Montserrat-Regular',
         marginBottom: 5,
     },
     nameText: {
-        fontSize: 40,
-        fontWeight: 'bold',
+        fontSize: 36,
+        fontFamily: 'Montserrat-Bold',
         color: '#FFF',
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        padding: 10, // padding on left and right
-        paddingVertical: 10,
+        padding: 20,
+        justifyContent: 'space-evenly', // Even spacing between buttons
     },
     button: {
-        width: '100%', // make the button span the full width
-        height: 60, // the button height
-        marginVertical: 10, // maintain constant spacing between buttons
-        justifyContent: 'center', // center the text vertically
-    },
-    buttonContent: {
-        padding: 0, // Remove any internal padding to ensure full coverage
-        height: '100%', // Ensure the content spans the entire button height
+        width: '100%',
+        height: 80, // Larger button height
+        marginVertical: 10, // Space between buttons
+        justifyContent: 'center',
+        borderRadius: 16,
+        backgroundColor: '#008080',
+        elevation: 3,
     },
     buttonLabel: {
-        fontSize: 20,
+        fontSize: 22, // Larger font size for better readability
+        fontFamily: 'Montserrat-SemiBold',
+        color: '#FFF',
+    },
+    logoutButton: {
+        backgroundColor: '#D32F2F',
     },
 });
 
