@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import HeaderBarImage from '../components/headerBarImage';
 import { Button, useTheme } from 'react-native-paper';
 import * as Haptics from 'expo-haptics';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -9,12 +8,9 @@ const { height: screenHeight } = Dimensions.get('window');
 
 const DashboardScreen = () => {
     const personName = "John Doe"; // Replace with dynamic name if needed
-    const theme = useTheme();
 
     return (
         <View style={styles.container}>
-
-
             {/* Welcome Section */}
             <View style={styles.welcomeContainer}>
                 <Text style={styles.welcomeText}>Welcome,</Text>
@@ -27,6 +23,7 @@ const DashboardScreen = () => {
                     mode="contained"
                     icon={() => <MaterialCommunityIcons name="account" size={32} color="#FFF" />}
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -39,6 +36,7 @@ const DashboardScreen = () => {
                     mode="contained"
                     icon={() => <MaterialCommunityIcons name="swap-horizontal" size={32} color="#FFF" />}
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -51,6 +49,7 @@ const DashboardScreen = () => {
                     mode="contained"
                     icon={() => <MaterialCommunityIcons name="file-document" size={32} color="#FFF" />}
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -63,6 +62,7 @@ const DashboardScreen = () => {
                     mode="contained"
                     icon={() => <MaterialCommunityIcons name="cog" size={32} color="#FFF" />}
                     style={styles.button}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -75,6 +75,7 @@ const DashboardScreen = () => {
                     mode="contained"
                     icon={() => <MaterialCommunityIcons name="logout" size={32} color="#FFF" />}
                     style={[styles.button, styles.logoutButton]}
+                    contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F7F9FC',
     },
     welcomeContainer: {
-        width: '95%', // Reduce the width to leave space on sides
+        width: '95%',
         height: screenHeight * 0.2,
         backgroundColor: '#004d99',
         justifyContent: 'center',
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
         elevation: 5,
-        marginHorizontal: '2%', // Equal space from both sides
+        marginHorizontal: '2%',
     },
     welcomeText: {
         fontSize: 20,
@@ -118,19 +119,23 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         padding: 20,
-        justifyContent: 'space-evenly', // Even spacing between buttons
+        justifyContent: 'space-evenly',
     },
     button: {
         width: '100%',
-        height: 80, // Larger button height
-        marginVertical: 10, // Space between buttons
+        height: 80,
+        marginVertical: 10,
         justifyContent: 'center',
         borderRadius: 16,
         backgroundColor: '#008080',
         elevation: 3,
     },
+    buttonContent: {
+        height: '100%', // Ensures ripple covers the whole button
+        width: '100%',
+    },
     buttonLabel: {
-        fontSize: 22, // Larger font size for better readability
+        fontSize: 22,
         fontFamily: 'Montserrat-SemiBold',
         color: '#FFF',
     },
