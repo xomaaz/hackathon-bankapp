@@ -27,7 +27,7 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        console.log('Account');
+                        navigation.navigate('Account');
                     }}
                 >
                     Account
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     welcomeContainer: {
         width: '95%',
         height: screenHeight * 0.2,
-        backgroundColor: '#004d99',
+        backgroundColor: '#2C2C2C',
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomLeftRadius: 30,
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 20,
-        color: '#FFF',
+        color: '#00BFA5',
         fontFamily: 'Montserrat-Regular',
         marginBottom: 5,
     },
     nameText: {
         fontSize: 36,
         fontFamily: 'Montserrat-Bold',
-        color: '#FFF',
+        color: '#00BFA5',
     },
     content: {
         flex: 1,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     buttonLabel: {
-        fontSize: 22,
+        fontSize: 20.5,
         fontFamily: 'Montserrat-SemiBold',
         color: '#FFF',
     },
