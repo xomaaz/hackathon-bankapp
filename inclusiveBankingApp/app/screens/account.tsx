@@ -4,7 +4,7 @@ import { Card, Button, Title, Subheading, Divider, Paragraph } from 'react-nativ
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
-export default function AccountScreen() {
+export default function AccountScreen({ navigation }: { navigation: any }) {
   const [showBalance, setShowBalance] = useState(false);
 
   return (
@@ -110,7 +110,7 @@ export default function AccountScreen() {
           labelStyle={styles.buttonLabel}
           onPress={() => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-            console.log('Transactions Pressed');
+            navigation.navigate('TransactionHistory');
           }}
         >
           Transactions

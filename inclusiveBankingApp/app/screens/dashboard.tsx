@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     welcomeContainer: {
         width: '95%',
         height: screenHeight * 0.2,
-        backgroundColor: '#004d99',
+        backgroundColor: '#2C2C2C',
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomLeftRadius: 30,
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 20,
-        color: '#FFF',
+        color: '#00BFA5',
         fontFamily: 'Montserrat-Regular',
         marginBottom: 5,
     },
     nameText: {
         fontSize: 36,
         fontFamily: 'Montserrat-Bold',
-        color: '#FFF',
+        color: '#00BFA5',
     },
     content: {
         flex: 1,
