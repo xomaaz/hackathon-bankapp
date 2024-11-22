@@ -1,15 +1,31 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text, ImageBackground } from 'react-native';
 import { Button, useTheme } from 'react-native-paper';
+import * as Haptics from 'expo-haptics';
+import { RadioButtonContext } from 'react-native-paper/lib/typescript/components/RadioButton/RadioButtonGroup';
+
+
 
 export default function WelcomeScreen({ navigation }: { navigation: any }) {
   const theme = useTheme();
+
+  const handlePressLogin = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); // Provides haptic feedback
+    navigation.navigate('Login')
+
+  };
+
+  const handlePressRegister = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); // Provides haptic feedback
+    navigation.navigate('Register')
+
+  };
 
   return (
     <ImageBackground
       source={require('../../assets/images/faysalBank.jpg')}
       style={styles.backgroundImage}
-      imageStyle={{ opacity: 0.7 }}
+      imageStyle={{ opacity: 0.5 }}
     >
       <View style={styles.logoContainer}>
         <Image
@@ -21,9 +37,9 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
         />
       </View>
 
-      <View style={styles.versionContainer}>
+      {/* <View style={styles.versionContainer}>
         <Text style={[styles.versionText, { fontFamily: 'Montserrat-Regular' }]}>Version 2.0.2</Text>
-      </View>
+      </View> */}
 
       <View style={styles.welcomeTextContainer}>
         <Text style={styles.welcomeText}>
@@ -34,21 +50,24 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
       <View style={styles.buttonContainer}>
         <Button
           mode="contained"
-          onPress={() => navigation.navigate('Login')}
-          style={[styles.button, { shadowColor: 'rgba(0, 0, 0, 0.2)', shadowOffset: { width: 2, height: 2 }, shadowOpacity: 0.5, shadowRadius: 4 }]}
+          onPress={handlePressLogin}
+          style={[styles.button, { shadowColor: 'rgba(0, 0, 0, 0.2)', shadowOffset: { width: 1, height: 1 }, shadowOpacity: 0.5, shadowRadius: 4 }]}
           labelStyle={styles.buttonLabel}
-          accessibilityLabel="Login Button"
+          contentStyle={styles.buttoncontext} // Increased height for larger buttons
+          accessibilityLabel="Login"
           accessibilityHint="Tap to go to the login screen"
         >
           LOGIN
         </Button>
         <Button
           mode="outlined"
-          onPress={() => navigation.navigate('Register')}
-          style={[styles.outlineButton, { shadowColor: 'rgba(0, 0, 0, 0.2)', shadowOffset: { width: 2, height: 2 }, shadowOpacity: 0.5, shadowRadius: 4 }]}
+          onPress={handlePressRegister}
+          style={[styles.outlineButton, { shadowColor: 'rgba(0, 0, 0, 1.0)', shadowOffset: { width: 2, height: 2 }, shadowOpacity: 0.5, shadowRadius: 4 }]}
           labelStyle={styles.outlineButtonLabel}
-          accessibilityLabel="Register Button"
+          contentStyle={styles.buttoncontext}
+          accessibilityLabel="Register"
           accessibilityHint="Tap to go to the register screen"
+
         >
           REGISTER
         </Button>
@@ -88,13 +107,13 @@ const styles = StyleSheet.create({
     textShadowRadius: 6,
   },
   welcomeTextContainer: {
-    marginTop: '30%',
-    paddingHorizontal: 20,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',  // Semi-transparent white background
+    marginTop: '0%',
+    paddingHorizontal: 30,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',  // Semi-transparent white background
     borderRadius: 15,
     padding: 15,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.9)',
+    borderColor: 'rgba(255, 255, 255, 0.8)',
   },
   welcomeText: {
     fontSize: 40,
@@ -109,30 +128,32 @@ const styles = StyleSheet.create({
   buttonContainer: {
     position: 'absolute',
     bottom: 80,
-    width: '80%',
+    width: '80%', // Increased width for larger buttons
   },
   button: {
-    marginVertical: 10,
-    paddingVertical: 10,
     backgroundColor: '#008080',
-    borderRadius: 8,
+    borderRadius: 12, // Slightly more rounded corners
   },
   buttonLabel: {
-    fontSize: 20,
+    fontSize: 20, // Larger font for better readability
     fontFamily: 'Montserrat-SemiBold',
     color: '#FFFFFF',
   },
   outlineButton: {
-    marginVertical: 10,
-    paddingVertical: 10,
-    borderWidth: 2,
+    // marginVertical: 15,
+    // paddingVertical: 15,
+    borderWidth: 3, // Slightly thicker border for visibility
     borderColor: '#008080',
-    borderRadius: 8,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',  // Semi-transparent white background
+    borderRadius: 12,
+    backgroundColor: 'rgba(255, 255, 255, 1.0)',
   },
   outlineButtonLabel: {
-    fontSize: 20,
+    fontSize: 20, // Larger font for consistency
     fontFamily: 'Montserrat-SemiBold',
     color: '#008080',
   },
+  buttoncontext: {
+    height: 60, // Increased height for larger buttons
+    padding: 0,
+  }
 });
