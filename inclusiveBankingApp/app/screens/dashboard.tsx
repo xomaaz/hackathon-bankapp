@@ -22,16 +22,32 @@ const DashboardScreen = () => {
 
             {/* Main Content */}
             <View style={styles.content}>
-                <Button mode="contained" style={styles.button} onPress={() => console.log('Transactions')}>
+                <Button
+                    mode="contained" 
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Transactions')}>
                     Transactions
                 </Button>
-                <Button mode="contained" style={styles.button} onPress={() => console.log('Bill Payment')}>
+                <Button 
+                    mode="contained" 
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Transactions')}>
                     Bill Payment
                 </Button>
-                <Button mode="contained" style={styles.button} onPress={() => console.log('History')}>
+                <Button 
+                    mode="contained" 
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Transactions')}>
                     History
                 </Button>
-                <Button mode="contained" style={styles.button} onPress={() => console.log('Help and Settings')}>
+                <Button                     
+                    mode="contained" 
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Transactions')}>
                     Help & Settings Preferences
                 </Button>
             </View>
@@ -71,8 +87,15 @@ const styles = StyleSheet.create({
     },
     button: {
         width: '100%', // make the button span the full width
-        marginVertical: 10, // space between buttons
+        height: 60, // the button height
+        marginVertical: 10, // maintain constant spacing between buttons
+        justifyContent: 'center', // center the text vertically,
+        fontSize: 20,
+    },
+    buttonLabel: {
+        fontSize: 20,
     },
 });
+
 
 export default DashboardScreen;
