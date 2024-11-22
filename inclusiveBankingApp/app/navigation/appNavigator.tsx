@@ -6,12 +6,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import WelcomeScreen from '../screens/welcome';
 import LoginScreen from '../screens/login';
 import DashboardScreen from '../screens/dashboard';
+import AccountScreen from '../screens/account';
 // import DashboardScreen from '../screens/dashboard';
 // import CheckBalanceScreen from '../screens/checkBalance';
 // import TransferMoneyScreen from '../screens/transferMoney';
 // import TransactionHistoryScreen from '../screens/transactionHistory';
 // import PayBillsScreen from '../screens/payBills';
-// import RegisterScreen from '../screens/register';
 // import SettingsScreen from '../screens/settings';
 // import HelpScreen from '../screens/help';
 
@@ -33,6 +33,7 @@ const AppNavigator = () => {
                 />
                 <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+                <Stack.Screen name="Account" component={AccountScreen} options={{ title: 'Account' }} />
                 {/*
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
                 <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} options={{ title: 'Transfer Money' }} />

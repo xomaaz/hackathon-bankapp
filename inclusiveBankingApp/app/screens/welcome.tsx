@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Image, Text, ImageBackground } from 'react-native';
 import { Button, useTheme } from 'react-native-paper';
 import * as Haptics from 'expo-haptics';
-import { RadioButtonContext } from 'react-native-paper/lib/typescript/components/RadioButton/RadioButtonGroup';
 
 
 
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
     // bottom: 20, // Increased margin for better spacing
   },
   buttonLabel: {
-    fontSize: 20, // Larger font for better readability
+    fontSize: 20.5, // Larger font for better readability
     fontFamily: 'Montserrat-SemiBold',
     color: '#FFFFFF',
   },

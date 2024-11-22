@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     buttonLabel: {
-        fontSize: 20,
+        fontSize: 20.5,
         fontFamily: 'Montserrat-SemiBold',
         color: '#FFFFFF',
     },

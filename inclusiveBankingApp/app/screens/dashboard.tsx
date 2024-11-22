@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const { height: screenHeight } = Dimensions.get('window');
 
 export default function DashboardScreen({ navigation }: { navigation: any }) {
-    const personName = "John Doe"; // Replace with dynamic name if needed
+    const personName = "Syed Amin"; // Replace with dynamic name if needed
 
     return (
         <View style={styles.container}>
@@ -27,7 +27,7 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        console.log('Account');
+                        navigation.navigate('Account');
                     }}
                 >
                     Account
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     buttonLabel: {
-        fontSize: 22,
+        fontSize: 20.5,
         fontFamily: 'Montserrat-SemiBold',
         color: '#FFF',
     },
