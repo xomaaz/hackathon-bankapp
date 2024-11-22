@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 // Import all screens from the screens directory
 import WelcomeScreen from '../screens/welcome';
 // import LoginScreen from '../screens/login';
-import DashboardScreen from '../screens/dashboard';
+// import DashboardScreen from '../screens/dashboard';
 // import CheckBalanceScreen from '../screens/checkBalance';
 // import TransferMoneyScreen from '../screens/transferMoney';
 // import TransactionHistoryScreen from '../screens/transactionHistory';
@@ -20,18 +20,18 @@ const AppNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Dashboard"
+                initialRouteName="Welcome"
                 screenOptions={{
-                    headerStyle: { backgroundColor: '#000000' }, // Example primary color
-                    headerTintColor: '#FFF',
-                    headerTitleStyle: { fontWeight: 'bold' },
                     animation: 'slide_from_right', // Smooth animations for transitions
-                    headerShown: false,
                 }}
             >
+                <Stack.Screen 
+                    name="Welcome" 
+                    component={WelcomeScreen} 
+                    options={{ headerShown: false }} // Completely remove the header
+                />
+                {/* <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
                 <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
-                {/* <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Welcome' }} />
-                <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
                 <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} options={{ title: 'Transfer Money' }} />
                 <Stack.Screen name="TransactionHistory" component={TransactionHistoryScreen} options={{ title: 'Transaction History' }} />
