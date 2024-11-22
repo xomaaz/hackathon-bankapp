@@ -11,7 +11,7 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
 
   const handlePressLogin = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); // Provides haptic feedback
-    navigation.navigate('Dashboard')
+    navigation.navigate('Login')
 
   };
 

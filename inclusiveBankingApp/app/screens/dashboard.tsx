@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const { height: screenHeight } = Dimensions.get('window');
 
-const DashboardScreen = () => {
+export default function DashboardScreen({ navigation }: { navigation: any }) {
     const personName = "John Doe"; // Replace with dynamic name if needed
 
     return (
@@ -79,7 +79,7 @@ const DashboardScreen = () => {
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-                        console.log('Logout');
+                        navigation.navigate('Welcome');
                     }}
                 >
                     Logout
@@ -144,4 +144,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DashboardScreen;
+// export default DashboardScreen;
