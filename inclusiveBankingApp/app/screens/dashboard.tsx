@@ -1,12 +1,107 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import HeaderBarImage from '../components/headerBarImage';
+import theme from '../constants/theme';
+import { Button } from 'react-native-paper'; 
 
-const DashBoardScreen = () => {
+const { height: screenHeight } = Dimensions.get('window');
+
+const DashboardScreen = () => {
+    const personName = "John Doe"; // Replace with dynamic name if needed
+
     return (
-        <View>
-            <Text>Check Balance Screen</Text>
+        <View style={styles.container}>
+            {/* Header with Image */}
+            <HeaderBarImage imageSource={require('../../assets/images/headerBarLogo.png')} />
+
+            {/* New Container Below Header */}
+            <View style={styles.welcomeContainer}>
+                <Text style={styles.welcomeText}>Welcome</Text>
+                <Text style={styles.nameText}>{personName}</Text>
+            </View>
+
+            {/* Main Content */}
+            <View style={styles.content}>
+                <Button
+                    mode="contained" 
+                    style={styles.button}
+                    contentStyle={styles.buttonContent}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Transactions')}>
+                    Transactions
+                </Button>
+                <Button 
+                    mode="contained" 
+                    style={styles.button}
+                    contentStyle={styles.buttonContent}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Bill Payment')}>
+                    Bill Payment
+                </Button>
+                <Button 
+                    mode="contained" 
+                    style={styles.button}
+                    contentStyle={styles.buttonContent}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('History')}>
+                    History
+                </Button>
+                <Button                     
+                    mode="contained" 
+                    style={styles.button}
+                    contentStyle={styles.buttonContent}
+                    labelStyle={styles.buttonLabel}
+                    onPress={() => console.log('Help and Preferences')}>
+                    Help & Settings Preferences
+                </Button>
+            </View>
         </View>
     );
 };
 
-export default DashBoardScreen;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    welcomeContainer: {
+        width: '100%',
+        height: screenHeight * 0.2, // 20% of screen height
+        backgroundColor: theme.colors.primary,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10, // Symmetrical padding
+    },
+    welcomeText: {
+        fontSize: 18,
+        color: '#FFF',
+        marginBottom: 5,
+    },
+    nameText: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: '#FFF',
+    },
+    content: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        padding: 10, // padding on left and right
+        paddingVertical: 10,
+    },
+    button: {
+        width: '100%', // make the button span the full width
+        height: 60, // the button height
+        marginVertical: 10, // maintain constant spacing between buttons
+        justifyContent: 'center', // center the text vertically
+    },
+    buttonContent: {
+        padding: 0, // Remove any internal padding to ensure full coverage
+        height: '100%', // Ensure the content spans the entire button height
+    },
+    buttonLabel: {
+        fontSize: 20,
+    },
+});
+
+export default DashboardScreen;
