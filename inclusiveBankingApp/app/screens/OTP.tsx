@@ -56,7 +56,7 @@ export default function OTPScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#004d99', // Darker background for contrast
+        backgroundColor: '#2C2C2C', // Darker background for contrast
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,

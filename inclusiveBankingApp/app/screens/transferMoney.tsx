@@ -170,8 +170,13 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 30,
+        color: '#004d4d',
+        textAlign: 'center',
+        textShadowColor: 'rgba(0, 0, 0, 0.1)',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2,
         fontFamily: 'Montserrat-Bold',
-        color: '#008080',
+        // color: '#008080',
     },
     section: {
         flex: 1,

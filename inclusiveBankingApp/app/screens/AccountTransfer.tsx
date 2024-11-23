@@ -82,7 +82,7 @@ export default function AccountTransferScreen({ navigation }) {
                     labelStyle={styles.actionLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        navigation.navigate('TransferDetails');
+                        navigation.navigate('TransferManual');
                     }}
                 >
                     Enter Details Manually

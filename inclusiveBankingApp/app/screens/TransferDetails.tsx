@@ -73,7 +73,7 @@ export default function TransferDetailsScreen({ navigation }) {
             <TouchableOpacity
                 style={[
                     styles.transferButton,
-                    { backgroundColor: amount ? '#4CAF50' : '#CCC' }, // Disable style if no amount
+                    { backgroundColor: amount ? '#008080' : '#CCC' }, // Disable style if no amount
                 ]}
                 onPress={handleTransfer}
                 disabled={!amount} // Disable button if no amount is entered
@@ -118,9 +118,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     header: {
-        fontSize: 32, // Larger font size
-        fontWeight: 'bold',
+        fontSize: 33, // Larger font size
+        color: '#004d4d',
         textAlign: 'center',
+        textShadowColor: 'rgba(0, 0, 0, 0.1)',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2,
+        fontWeight: 'bold',
+        // textAlign: 'center',
         marginBottom: 30,
     },
     label: {

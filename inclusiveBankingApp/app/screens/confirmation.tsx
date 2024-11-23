@@ -74,8 +74,13 @@ const styles = StyleSheet.create({
     headerTitle: {
         fontSize: 30,
         fontFamily: 'Montserrat-Bold',
-        color: '#008080', // Teal color for header
+        color: '#004d4d',
         textAlign: 'center',
+        textShadowColor: 'rgba(0, 0, 0, 0.1)',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2,
+        // color: '#008080', // Teal color for header
+        // textAlign: 'center',
         marginBottom: 20,
     },
     card: {
@@ -126,7 +131,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     doneButton: {
-        backgroundColor: '#4CAF50', // Green button for "Done"
+        backgroundColor: '#008080', // Green button for "Done"
         paddingVertical: 15,
         paddingHorizontal: 20,
         borderRadius: 10,
