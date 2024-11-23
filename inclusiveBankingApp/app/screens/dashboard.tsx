@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const { height: screenHeight } = Dimensions.get('window');
 
 export default function DashboardScreen({ navigation }: { navigation: any }) {
-    const personName = "Syed Amin"; // Replace with dynamic name if needed
+    const personName = "Jassim Saleh"; // Replace with dynamic name if needed
 
     return (
         <View style={styles.container}>
@@ -40,10 +40,10 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        console.log('Transactions');
+                        navigation.navigate('TransferMoney');
                     }}
                 >
-                    Transactions
+                    Funds Transfer
                 </Button>
                 <Button
                     mode="contained"
