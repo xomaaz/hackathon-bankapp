@@ -1,12 +1,33 @@
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { Button, Title, Divider } from 'react-native-paper';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Dimensions, Modal } from 'react-native';
+import { Button, Title, Divider, Card, Subheading, Paragraph } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import { BlurView } from 'expo-blur';
+import QRCode from 'react-native-qrcode-svg';
+
 
 const { height: screenHeight } = Dimensions.get('window');
 
 export default function TransferMoneyScreen({ navigation }: { navigation: any }) {
+    const [showQRCode, setShowQRCode] = useState(false);
+
+    const handleQRCode = () => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        setShowQRCode(true);
+    };
+
+    const closeQRCode = () => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        setShowQRCode(false);
+    };
+
+    // Generate QR code data (using IBAN in this case)
+    const qrData = 'PK86FAYS0000001123456702';
+
+
+
+
     return (
         <View style={styles.container}>
             {/* Title Section */}
@@ -72,13 +93,61 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
                     contentStyle={styles.buttonContent}
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
-                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        console.log('Share Account QR Code');
+                        // Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        handleQRCode();
                     }}
                 >
                     Share Account QR Code
                 </Button>
             </View>
+
+            {/* QR Code Modal */}
+            <Modal
+                visible={showQRCode}
+                transparent={true}
+                animationType="fade"
+                onRequestClose={closeQRCode}
+            >
+                <BlurView intensity={150} style={StyleSheet.absoluteFill}>
+                    <View style={styles.modalContainer}>
+                        <View style={styles.qrCodeBox}>
+                            <View style={styles.qrHeader}>
+                                <Title style={styles.qrTitle}>Your Account QR Code</Title>
+                                <Paragraph style={styles.qrSubtitle}>
+                                    Scan to receive instant transfers
+                                </Paragraph>
+                            </View>
+
+                            <View style={styles.qrWrapper}>
+                                <QRCode
+                                    value={qrData}
+                                    size={200}
+                                    color="#2C2C2C"
+                                    backgroundColor="white"
+                                />
+                            </View>
+
+                            <View style={styles.qrInfo}>
+                                <MaterialCommunityIcons name="information" size={20} color="#666" />
+                                <Text style={styles.qrInfoText}>
+                                    Share this QR code to receive payments securely
+                                </Text>
+                            </View>
+
+                            <Button
+                                mode="contained"
+                                style={styles.cancelButton}
+                                labelStyle={styles.cancelButtonLabel}
+                                onPress={closeQRCode}
+                            >
+                                Cancel
+                            </Button>
+                        </View>
+                    </View>
+                </BlurView>
+            </Modal>
+
+
         </View>
     );
 }
@@ -139,5 +208,86 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         backgroundColor: '#D3D3D3',
         height: 2,
+    },
+
+
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    qrCodeBox: {
+        backgroundColor: '#2C2C2C',
+        borderRadius: 24,
+        padding: 24,
+        width: '90%',
+        maxWidth: 400,
+        alignItems: 'center',
+        elevation: 8,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
+    },
+    qrHeader: {
+        alignItems: 'center',
+        marginBottom: 24,
+    },
+    qrTitle: {
+        fontSize: 23.5,
+        fontFamily: 'Montserrat-Bold',
+        color: '#00BFA5',
+        marginBottom: 8,
+    },
+    qrSubtitle: {
+        fontSize: 16,
+        fontFamily: 'Montserrat-Regular',
+        color: '#ffff',
+        textAlign: 'center',
+    },
+    qrWrapper: {
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 16,
+        elevation: 4,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        marginBottom: 24,
+    },
+    qrInfo: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#F5F5F5',
+        padding: 5,
+        borderRadius: 12,
+        marginBottom: 24,
+        maxWidth: '90%',
+    },
+    qrInfoText: {
+        marginLeft: 8,
+        fontSize: 14,
+        fontFamily: 'Montserrat-Regular',
+        color: '#666',
+        flex: 1,
+    },
+    cancelButton: {
+        backgroundColor: '#FF3B30',
+        width: '100%',
+        borderRadius: 12,
+        elevation: 2,
+    },
+    cancelButtonLabel: {
+        fontSize: 16,
+        fontFamily: 'Montserrat-SemiBold',
+        paddingVertical: 4,
     },
 });

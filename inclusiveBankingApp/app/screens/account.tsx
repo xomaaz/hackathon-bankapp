@@ -53,7 +53,7 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           {/* Balance Display */}
           <View style={styles.cardHeader}>
             <Text style={styles.balance}>
-              {showBalance ? '$10,250.00' : '**** ****'}
+              {showBalance ? 'PKR 10,250.00' : '**** ****'}
             </Text>
           </View>
 
@@ -77,9 +77,9 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           <View style={styles.cardFooter}>
             <Text
               style={styles.cardHolder}
-              accessibilityLabel="Card holder name Syed Amin Ur Rehman"
+              accessibilityLabel="Card holder name Amin Ur Rehman"
             >
-              Syed Amin Ur Rehman
+              Amin Ur Rehman
             </Text>
             <Text
               style={styles.expiryDate}
@@ -150,7 +150,7 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
                   Scan to receive instant transfers
                 </Paragraph>
               </View>
-              
+
               <View style={styles.qrWrapper}>
                 <QRCode
                   value={qrData}

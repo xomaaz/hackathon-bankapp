@@ -3,7 +3,7 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, Modal } from 'reac
 import * as Haptics from 'expo-haptics';
 
 export default function TransferDetailsScreen({ navigation }) {
-    const [beneficiaryName, setBeneficiaryName] = useState('John Doe'); // Prefilled name
+    const [beneficiaryName, setBeneficiaryName] = useState('Ali Nisar Shah'); // Prefilled name
     const [accountNumber, setAccountNumber] = useState('1234567890'); // Prefilled account number
     const [amount, setAmount] = useState('');
     const [purpose, setPurpose] = useState('');

@@ -23,11 +23,11 @@ export default function ConfirmationScreen({ navigation }) {
 
                     {/* Beneficiary Details */}
                     <Subheading style={styles.detailLabel}>Beneficiary:</Subheading>
-                    <Text style={styles.detailText}>Jane Doe</Text>
+                    <Text style={styles.detailText}>Ali Nisar Shah</Text>
 
                     {/* Transfer Amount */}
                     <Subheading style={styles.detailLabel}>Amount Transferred:</Subheading>
-                    <Text style={styles.amountText}>$1,000.00</Text>
+                    <Text style={styles.amountText}>PKR 1,000.00</Text>
 
                     {/* Date and Time */}
                     <Subheading style={styles.detailLabel}>Date:</Subheading>

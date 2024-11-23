@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const { height: screenHeight } = Dimensions.get('window');
 
 export default function DashboardScreen({ navigation }: { navigation: any }) {
-    const personName = "Jassim Saleh"; // Replace with dynamic name if needed
+    const personName = "Amin ur Rehman"; // Replace with dynamic name if needed
 
     return (
         <View style={styles.container}>
