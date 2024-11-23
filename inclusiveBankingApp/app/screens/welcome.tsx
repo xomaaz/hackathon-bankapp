@@ -127,8 +127,10 @@ const styles = StyleSheet.create({
   buttonContainer: {
     position: 'absolute',
     bottom: 80,
-    width: '80%', // Increased width for larger buttons
+    width: '80%', // Increased width for larger buttons,
+    gap: 20,
   },
+
   button: {
     backgroundColor: '#008080',
     borderRadius: 12, // Slightly more rounded corners
