@@ -44,7 +44,7 @@ const AppNavigator = () => {
                 <Stack.Screen name="AccountTransfer" component={AccountTransferScreen} options={{ title: 'Account Transfer' }} />
                 <Stack.Screen name="TransferDetails" component={TransferDetailsScreen} options={{ title: 'Transfer Funds Details' }} />
                 <Stack.Screen name="OTP" component={OTPScreen} options={{ title: 'Verification' }} />
-                <Stack.Screen name="confirmation" component={ConfirmationScreen} options={{ title: 'Receipt' }} />
+                <Stack.Screen name="confirmation" component={ConfirmationScreen} options={{ title: 'Transaction Complete' }} />
                 {/*
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
                 

@@ -32,7 +32,7 @@ export default function TransferDetailsScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Transfer Details</Text>
+            <Text style={styles.header} accessibilityLabel="">Transfer Details</Text>
 
             {/* Beneficiary Name */}
             <Text style={styles.label}>Sending To</Text>
@@ -51,7 +51,7 @@ export default function TransferDetailsScreen({ navigation }) {
             />
 
             {/* Amount */}
-            <Text style={styles.label}>Amount</Text>
+            <Text style={styles.label} accessibilityLabel="Amount">Amount</Text>
             <TextInput
                 style={styles.input}
                 value={amount}

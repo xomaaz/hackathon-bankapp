@@ -51,8 +51,8 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           </View>
 
           {/* Balance Display */}
-          <View style={styles.cardHeader}>
-            <Text style={styles.balance}>
+          <View style={styles.cardHeader} >
+            <Text style={styles.balance} accessibilityLabel={showBalance ? 'Your balance is PKR 10,250.00' : 'Balance hidden. Tap show balance to reveal'}>
               {showBalance ? 'PKR 10,250.00' : '**** ****'}
             </Text>
           </View>
@@ -125,6 +125,7 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           style={styles.button}
           contentStyle={styles.buttonContent}
           labelStyle={styles.buttonLabel}
+          accessibilityLabel={"View Transaction History"}
           onPress={() => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
             navigation.navigate('TransactionHistory');

@@ -12,9 +12,9 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
     return (
         <View style={styles.container}>
             {/* Welcome Section */}
-            <View style={styles.welcomeContainer}>
-                <Text style={styles.welcomeText}>Welcome,</Text>
-                <Text style={styles.nameText}>{personName}</Text>
+            <View style={styles.welcomeContainer} accessibilityLabel="Welcome Amin ur Rehman. Select From options below">
+                <Text style={styles.welcomeText} importantForAccessibility='no'>Welcome,</Text>
+                <Text style={styles.nameText} importantForAccessibility="no">{personName}</Text>
             </View>
 
             {/* Main Content */}
@@ -29,6 +29,7 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                         navigation.navigate('Account');
                     }}
+                    accessibilityLabel='View Account Details'
                 >
                     Account
                 </Button>

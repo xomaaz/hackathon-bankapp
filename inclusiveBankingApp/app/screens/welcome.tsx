@@ -26,13 +26,13 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
       style={styles.backgroundImage}
       imageStyle={{ opacity: 0.5 }}
     >
-      <View style={styles.logoContainer}>
+      <View style={styles.logoContainer} accessible={false}>
         <Image
           source={require('../../assets/images/fbLogo.png')}
           style={[styles.logo, { shadowColor: 'rgba(0, 0, 0, 0.2)', shadowOffset: { width: 2, height: 2 }, shadowOpacity: 0.5, shadowRadius: 4 }]}
           resizeMode="contain"
-          accessible
-          accessibilityLabel="Faysal Bank Logo"
+        // accessible={false}
+        // accessibilityLabel="Faysal Bank Logo"
         />
       </View>
 
@@ -41,7 +41,7 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
       </View> */}
 
       <View style={styles.welcomeTextContainer}>
-        <Text style={styles.welcomeText}>
+        <Text style={styles.welcomeText} accessibilityLabel="Welcome to Faysal Bank App. Login or Register Below">
           Welcome to Faysal Bank
         </Text>
       </View>
@@ -71,7 +71,7 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
           REGISTER
         </Button>
       </View>
-    </ImageBackground>
+    </ImageBackground >
   );
 }
 

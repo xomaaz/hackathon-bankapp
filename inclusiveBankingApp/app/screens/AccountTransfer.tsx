@@ -95,14 +95,17 @@ export default function AccountTransferScreen({ navigation }) {
                 transparent
                 animationType="fade"
                 onRequestClose={() => setShowConfirmModal(false)}
+
             >
                 <View style={styles.modalOverlay}>
                     <View style={styles.modalContainer}>
-                        <Text style={styles.modalTitle}>Confirm Transfer</Text>
+                        <Text style={styles.modalTitle} accessibilityLabel="The Image you selected is a valid QR Code. The details are below?"
+                            accessibilityHint="The Image you selected is a QR Code">Confirm Transfer</Text>
                         <Text style={styles.modalDetailText}>Name:</Text>
                         <Text style={styles.modalText}>{confirmData.name}</Text>
                         <Text style={styles.modalDetailText}>Account Number:</Text>
-                        <Text style={styles.modalText}>{confirmData.accountNumber}</Text>
+                        <Text style={styles.modalText} accessibilityLabel="1 2 3 4 5 6 7 8 9 0">{confirmData.accountNumber}</Text>
+
 
                         <View style={styles.modalButtonContainer}>
                             <TouchableOpacity style={styles.modalButtonCancel} onPress={handleCancel}>

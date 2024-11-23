@@ -55,10 +55,12 @@ export default function ConfirmationScreen({ navigation }) {
                     mode="contained"
                     style={styles.addButton}
                     labelStyle={styles.buttonLabel}
+                    accessibilityLabel="Add to your Beneficiaries"
                     onPress={() => { navigation.navigate("Dashboard"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); }}
                 >
-                    Add Payee
+                    Add Beneficiary
                 </Button>
+
             </View>
         </View>
     );

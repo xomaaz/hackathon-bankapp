@@ -19,7 +19,7 @@ export default function OTPScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Verify</Text>
+            <Text style={styles.header} accessibilityLabel="Enter OTP below">Verify</Text>
 
             <Text style={styles.message}>
                 We sent you a 5 digit OTP to

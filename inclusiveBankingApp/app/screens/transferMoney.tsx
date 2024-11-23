@@ -48,6 +48,8 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                         navigation.navigate('Beneficiaries');
                     }}
+                    accessibilityLabel="Select from existing Beneficiaries"
+                // accessibilityHint="Login using your 4-digit PIN"
                 >
                     Beneficiaries
                 </Button>
@@ -61,6 +63,7 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                         navigation.navigate('AccountTransfer');
                     }}
+                    accessibilityLabel="Transfer to a new account"
                 >
                     Account Transfer
                 </Button>
@@ -74,8 +77,9 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                         navigation.navigate('AccountTransfer');
                     }}
+                    accessibilityLabel="Transfer using Raast"
                 >
-                    RAAST Transfer
+                    Raast Transfer
                 </Button>
             </View>
 
