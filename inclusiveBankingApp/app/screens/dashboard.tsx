@@ -160,7 +160,7 @@ import * as Speech from 'expo-speech';
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
 export default function DashboardScreen({ navigation }: { navigation: any }) {
-    const personName = "Amin ur Rehman";
+    const personName = "Yousuf Hussain";
     const lastLogin = "23 Nov, 2024 • 10:30 AM";
 
     useEffect(() => {
@@ -214,7 +214,7 @@ export default function DashboardScreen({ navigation }: { navigation: any }) {
                     <View style={styles.userInfoContainer}>
                         <Avatar.Text
                             size={70}
-                            label="AR"
+                            label="YH"
                             style={styles.avatar}
                             labelStyle={styles.avatarLabel}
                         />

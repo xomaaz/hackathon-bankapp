@@ -77,9 +77,9 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           <View style={styles.cardFooter}>
             <Text
               style={styles.cardHolder}
-              accessibilityLabel="Card holder name Amin Ur Rehman"
+              accessibilityLabel="Card holder name Yousuf Hussain"
             >
-              Amin Ur Rehman
+              Yousuf Hussain
             </Text>
             <Text
               style={styles.expiryDate}
