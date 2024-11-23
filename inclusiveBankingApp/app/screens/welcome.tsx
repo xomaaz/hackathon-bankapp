@@ -140,15 +140,13 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   outlineButton: {
-    marginVertical: 15,
-    paddingVertical: 15,
-    // borderWidth: 3, // Slightly thicker border for visibility
+    borderWidth: 3, // Slightly thicker border for visibility
     borderColor: '#008080',
     borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 1.0)',
   },
   outlineButtonLabel: {
-    fontSize: 20, // Larger font for consistency
+    fontSize: 20.5, // Larger font for consistency
     fontFamily: 'Montserrat-SemiBold',
     color: '#008080',
   },
