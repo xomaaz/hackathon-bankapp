@@ -30,9 +30,8 @@ export default function AccountScreen({ navigation }: { navigation: any }) {
           {/* Balance Display */}
           <Text
             style={styles.balance}
-            accessibilityLabel={`Account balance is ${
-              showBalance ? 'PKR 1,223,944.00' : 'Hidden'
-            }`}
+            accessibilityLabel={`Account balance is ${showBalance ? 'PKR 1,223,944.00' : 'Hidden'
+              }`}
           >
             {showBalance ? 'PKR 1,223,944.00' : '**** ****'}
           </Text>
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: 30,
     fontFamily: 'Montserrat-Bold',
     color: '#008080',
     marginBottom: 20,

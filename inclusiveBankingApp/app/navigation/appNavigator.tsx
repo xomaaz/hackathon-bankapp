@@ -11,6 +11,10 @@ import TransactionHistoryScreen from '../screens/transactionHistory';
 // import DashboardScreen from '../screens/dashboard';
 // import CheckBalanceScreen from '../screens/checkBalance';
 import TransferMoneyScreen from '../screens/transferMoney';
+import AccountTransferScreen from '../screens/AccountTransfer';
+import TransferDetailsScreen from '../screens/TransferDetails';
+import OTPScreen from '../screens/OTP';
+import ConfirmationScreen from '../screens/confirmation';
 // import TransactionHistoryScreen from '../screens/transactionHistory';
 // import PayBillsScreen from '../screens/payBills';
 // import SettingsScreen from '../screens/settings';
@@ -37,6 +41,10 @@ const AppNavigator = () => {
                 <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} options={{ title: 'Funds Transfer' }} />
                 <Stack.Screen name="Account" component={AccountScreen} options={{ title: 'Account' }} />
                 <Stack.Screen name="TransactionHistory" component={TransactionHistoryScreen} options={{ title: 'Transaction History' }} />
+                <Stack.Screen name="AccountTransfer" component={AccountTransferScreen} options={{ title: 'Account Transfer' }} />
+                <Stack.Screen name="TransferDetails" component={TransferDetailsScreen} options={{ title: 'Transfer Funds Details' }} />
+                <Stack.Screen name="OTP" component={OTPScreen} options={{ title: 'Verification' }} />
+                <Stack.Screen name="confirmation" component={ConfirmationScreen} options={{ title: 'Receipt' }} />
                 {/*
                 <Stack.Screen name="CheckBalance" component={CheckBalanceScreen} options={{ title: 'Check Balance' }} />
                 

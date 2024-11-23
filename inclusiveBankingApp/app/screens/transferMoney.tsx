@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Button, Title, Divider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
@@ -11,7 +11,7 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
         <View style={styles.container}>
             {/* Title Section */}
             <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>Transfer Money</Text>
+                <Title style={styles.titleText}>Transfer Money</Title>
             </View>
 
             {/* Send Money Section */}
@@ -51,15 +51,19 @@ export default function TransferMoneyScreen({ navigation }: { navigation: any })
                     labelStyle={styles.buttonLabel}
                     onPress={() => {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                        navigation.navigate('RaastTransfer');
+                        navigation.navigate('AccountTransfer');
                     }}
                 >
                     RAAST Transfer
                 </Button>
             </View>
 
+
+
+
             {/* Receive Money Section */}
             <View style={styles.section}>
+                <Divider style={styles.divider} />
                 <Text style={[styles.sectionTitle, styles.receiveMoneyTitle]}>Receive Money</Text>
                 <Button
                     mode="contained"
@@ -86,19 +90,19 @@ const styles = StyleSheet.create({
     },
     titleContainer: {
         width: '95%',
-        height: screenHeight * 0.15,
-        backgroundColor: '#004d99',
+        height: screenHeight * 0.1,
+        backgroundColor: '#F7F9FC',
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
-        elevation: 5,
+        // elevation: 5,
         marginHorizontal: '2%',
     },
     titleText: {
         fontSize: 30,
         fontFamily: 'Montserrat-Bold',
-        color: '#FFF',
+        color: '#008080',
     },
     section: {
         flex: 1,
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     receiveMoneyTitle: {
-        marginTop: 30, // Add spacing above Receive Money title
+        marginTop: 10, // Add spacing above Receive Money title
     },
     button: {
         width: '100%',
@@ -130,5 +134,10 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontFamily: 'Montserrat-SemiBold',
         color: '#FFF',
+    },
+    divider: {
+        marginVertical: 20,
+        backgroundColor: '#D3D3D3',
+        height: 2,
     },
 });
